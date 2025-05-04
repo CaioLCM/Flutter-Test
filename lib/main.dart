@@ -30,10 +30,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
+  String par_impar = "Par";
   void _incrementCounter() {
     setState(() {
       _counter++;
+      par_impar = _counter % 2 == 0? "Par": "Impar";
     });
   }
 
@@ -48,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('Número de clicks'),
+            Text('Número de clicks (o número é $par_impar)'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
